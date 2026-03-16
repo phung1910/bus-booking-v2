@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Xe Buýt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Thêm Chuyến Xe Mới</h2>
+    
+    <form id="busForm">
+        <div class="form-group">
+            <label>Biển số xe:</label>
+            <input type="text" id="busNumber" placeholder="VD: 29B-123.45" required>
+        </div>
+        <div class="form-group">
+            <label>Sức chứa (Số ghế):</label>
+            <input type="number" id="capacity" placeholder="VD: 40" required>
+        </div>
+        <div class="form-group">
+            <label>Loại xe:</label>
+            <select id="busType">
+                <option value="Giường nằm">Giường nằm</option>
+                <option value="Ghế ngồi">Ghế ngồi</option>
+                <option value="Limousine">Limousine</option>
+            </select>
+        </div>
+        <button type="submit">Thêm Xe Buýt</button>
+    </form>
+
+    <h2>Danh Sách Xe Buýt</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Biển số</th>
+                <th>Sức chứa</th>
+                <th>Loại xe</th>
+            </tr>
+        </thead>
+        <tbody id="busTableBody">
+            </tbody>
+    </table>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
