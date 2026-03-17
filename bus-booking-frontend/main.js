@@ -1,4 +1,3 @@
-
 const apiUrl = 'http://localhost:5000/api/buses';
 
 async function fetchBuses() {
@@ -7,14 +6,13 @@ async function fetchBuses() {
         const buses = await response.json();
         
         const tbody = document.getElementById('busTableBody');
-        tbody.innerHTML = '';
 
         buses.forEach(bus => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>${bus.id}</td>
                 <td>${bus.bus_number}</td>
-                <td>${bus.capacity}</td>
+                <td>${bus.capacity}</td> 
                 <td>${bus.bus_type}</td>
             `;
             tbody.appendChild(tr);
@@ -25,8 +23,7 @@ async function fetchBuses() {
 }
 
 document.getElementById('busForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
+    e.preventDefault(); 
     const newBus = {
         bus_number: document.getElementById('busNumber').value,
         capacity: document.getElementById('capacity').value,
@@ -45,7 +42,7 @@ document.getElementById('busForm').addEventListener('submit', async function(e) 
         if (response.ok) {
             alert('Thêm xe buýt thành công!');
             document.getElementById('busForm').reset(); 
-            fetchBuses(); 
+            fetchBuses();
         } else {
             alert('Lỗi: Không thể thêm xe (Có thể trùng biển số)');
         }
